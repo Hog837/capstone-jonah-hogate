@@ -1,0 +1,58 @@
+@use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
+
+
+.header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #222222;
+  width: 100%;
+  @include tablet-view{
+    flex-direction: row;
+    height: 3.5rem;
+  }
+  &__img{
+    width: 6rem;
+    height: 2.5rem;
+    margin: 0.5rem 0.5rem;
+    @include tablet-view{
+      width: 6rem;
+      height: 2.5rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  }
+  &__links{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include tablet-view{
+      flex-direction: row;
+    }
+  }
+  &__container{
+    text-decoration: none;
+    margin-top: 0.25rem;
+    @include tablet-view{
+      padding: .5rem;
+      border-radius: .5rem;
+    }
+    &:hover {
+      background-color: rgb(75, 75, 75);
+      color: rgb(0, 0, 0);
+    }
+    &-link {
+      width: 100%;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      @include tablet-view{
+        font-size: 1.25rem;
+      }
+      @include desktop-view{
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
