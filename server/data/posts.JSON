@@ -38,5 +38,21 @@
     "weight": "38Lbs, 40Lbs",
     "bait": "live Shad",
     "location": "18.459251282986532, -66.25839330456647"
+  },
+  {
+    "id": "ade0a47b-cee6-4693-b4cd-a7e6cb25f4b7",
+    "image": "http://localhost:8080/images/6.jpg",
+    "type": "Green Sunfish",
+    "weight": "0.06Lbs",
+    "bait": "Purple Jig",
+    "location": "36.46391681169143, -94.24755338144303"
+  },
+  {
+    "id": "bb1491eb-30e6-4728-a5fa-72f89feaf622",
+    "image": "http://localhost:8080/images/7.jpg",
+    "type": "Grey Drum",
+    "weight": "1.84Lbs",
+    "bait": "Plastic Shad",
+    "location": "36.6414551931436, -94.79573947240516"
   }
 ]

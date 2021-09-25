@@ -9,8 +9,8 @@ function Nav(){
       <div className="header__links">
         
         <div className="header__container"> 
-          <Link to="/" className="header__container-link">
-            Feed
+          <Link to="/posts" className="header__container-link">
+            Posts
           </Link>
         </div>
         <div className="header__container"> 
@@ -19,8 +19,13 @@ function Nav(){
           </Link>
         </div>
         <div className="header__container"> 
-          <Link to="/" className="header__container-link">
+          <Link to="/about" className="header__container-link">
           About us
+          </Link>
+        </div>
+        <div className="header__container"> 
+          <Link to="/upload" className="header__container-link">
+          Upload
           </Link>
         </div>
       </div>

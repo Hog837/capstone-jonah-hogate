@@ -22,6 +22,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use("/posts", PostRoutes);
+
 app.listen(PORT, () => {
   console.log(`Server is running through ${PORT}`);
 });
