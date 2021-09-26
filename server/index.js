@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const PostRoutes = require("./routes/PostRoutes");
-
 const app = express();
 const PORT = 8080;
 app.use(express.json());
@@ -14,7 +13,7 @@ app.use((_req, _res, next) => {
 app.use((req, res, next) => {
   if (
     req.method === "POST" &&
-    req.headers["content-type"] !== "application/json"
+    req.headers["content-type"] !== "multipart/form-data"
   ) {
     return res.status(400).send("Server requires application/json");
   }

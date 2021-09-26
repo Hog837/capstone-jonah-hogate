@@ -1,0 +1,121 @@
+@use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
+
+.upload {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  &__image-upload{
+    color: #869D7A;
+  }
+  &__upload {
+    color: #222222;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    @include tablet-view {
+      font-size: 3rem;
+      font-weight: bolder;
+      padding-bottom: 2rem;
+      padding-top: 3rem;
+    }
+  }
+  &__thumbnail {
+    color: #afafaf;
+    font-size: 0.85rem;
+    font-weight: bold;
+    @include tablet-view {
+      padding-top: 1.5rem;
+    }
+  }
+  &__img {
+    width: 18rem;
+    height: 9.563rem;
+    border-radius: 7.5%;
+    @include tablet-view {
+      width: 21.5rem;
+      height: 11.625rem;
+    }
+    @include desktop-view {
+      width: 21.5rem;
+      height: 11.625rem;
+      margin-right: 1.5rem;
+    }
+  }
+  &__title-description {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__title-video {
+    color: #afafaf;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding-top: 1.5rem;
+  }
+  &__title {
+    margin-bottom: 1.5rem;
+    width: 97%;
+    @include desktop-view {
+    }
+  }
+  &__title-video-description {
+    color: #afafaf;
+    font-size: 0.85rem;
+    font-weight: bold;
+  }
+  &__description {
+    height: 8.938rem;
+    width: 97%;
+    margin-bottom: 2rem;
+    @include desktop-view {
+      height: 5.875rem;
+    }
+  }
+  &__buttons {
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    @include tablet-view {
+      flex-direction: row-reverse;
+      justify-content: flex-start;
+      align-items: baseline;
+    }
+  }
+  &__publish {
+    height: 3rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    background-color: #869D7A;
+    border-style: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    @include tablet-view {
+      width: 10rem;
+      margin-top: 1.5rem;
+    }
+  }
+  &__cancel {
+    color: #869D7A;
+    background-color: #fff;
+    border-style: none;
+    font-size: 1rem;
+    font-weight: bold;
+    @include tablet-view {
+      padding-right: 3rem;
+    }
+  }
+  &__thumbnail-all {
+    @include desktop-view {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__video-all {
+    @include desktop-view {
+      display: flex;
+    }
+  }
+}

@@ -19,11 +19,6 @@ function Nav(){
           </Link>
         </div>
         <div className="header__container"> 
-          <Link to="/about" className="header__container-link">
-          About us
-          </Link>
-        </div>
-        <div className="header__container"> 
           <Link to="/upload" className="header__container-link">
           Upload
           </Link>

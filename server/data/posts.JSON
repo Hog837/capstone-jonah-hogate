@@ -32,14 +32,6 @@
     "location": "36.64162362211313, -94.79566373194217"
   },
   {
-    "id": "89898957-04ba-4bd0-9f5c-a7aea7447963",
-    "image": "http://localhost:8080/images/5.jpg",
-    "type": "Tarpon",
-    "weight": "38Lbs, 40Lbs",
-    "bait": "live Shad",
-    "location": "18.459251282986532, -66.25839330456647"
-  },
-  {
     "id": "ade0a47b-cee6-4693-b4cd-a7e6cb25f4b7",
     "image": "http://localhost:8080/images/6.jpg",
     "type": "Green Sunfish",

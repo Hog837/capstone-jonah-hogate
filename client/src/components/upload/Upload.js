@@ -1,5 +1,7 @@
 import "./Upload.scss";
 import axios from "axios";
+import { Link } from "react-router-dom";
+
 
 function Upload(props) {
   const onSubmitHandler = (event) => {
@@ -8,20 +10,20 @@ function Upload(props) {
     method: "POST",
       url: "http://localhost:8080/posts",
       data: {
-        "image": event.target.image.value,
-        "type": event.target.type.value,
-        "weight": event.target.weight.value,
-        "bait": event.target.bait.value,
-        "location": event.target.location.valuef
+        image: event.target.image.value,
+        type: event.target.type.value,
+        weight: event.target.weight.value,
+        bait: event.target.bait.value,
+        location: event.target.location.value
       },
       headers: {
-        "Content-Type": "application/json",
-      },
+        "Content-Type": "multipart/form-data",
+      }
     }).then(
       (response) => {
         console.log(response);
-        alert("Video published");
-        props.history.push("/");
+        alert("Post published");
+        props.history.push("/posts");
       },
       (error) => {
         console.log(error);
@@ -31,31 +33,59 @@ function Upload(props) {
   return (
     <form
       className="upload"
-      onSubmit={(e) => {
-        onSubmitHandler(e);
+      onSubmit={(event) => {
+        onSubmitHandler(event);
       }}
     >
-      <h1 className="upload__upload">Upload Video</h1>
+      <h1 className="upload__upload">Upload Post</h1>
       <hr />
       <div className="upload__video-all">
         <div className="upload__thumbnail-all">
-          <p className="upload__thumbnail">VIDEO THUMBNAIL</p>
+          <p className="upload__thumbnail">POST PICTURE</p>
+          <input
+            id="image"
+            type="file"
+            className="upload__image-upload"
+            placeholder="Add an image of your fish"
+            required
+          ></input>
         </div>
         <div className="upload__title-description">
-          <p className="upload__title-video">TITLE YOUR VIDEO</p>
-          <textarea
-            id="title"
+          <p className="upload__title-video">TYPE OF FISH</p>
+
+          <input
+            id="type"
             className="upload__title"
-            placeholder="Add a title to your video"
-          ></textarea>
+            placeholder="Add the type of fish"
+            required
+          ></input>
           <p className="upload__title-video-description">
-            ADD A VIDEO DESCRIPTION
+            WEIGHT OF FISH
           </p>
-          <textarea
-            id="description"
-            className="upload__description"
-            placeholder="Add a description of your video"
-          ></textarea>
+          <input
+            id="weight"
+            className="upload__title"
+            placeholder="Add the weight of your fish"
+            required
+          ></input>
+          <p className="upload__title-video-description">
+            BAIT USED
+          </p>
+          <input
+            id="bait"
+            className="upload__title"
+            placeholder="Add the bait used to catch your fish"
+            required
+          ></input>
+          <p className="upload__title-video-description">
+            LOCATION
+          </p>
+          <input
+            id="location"
+            className="upload__title"
+            placeholder="Add the location where you caught your fish"
+            required
+          ></input>
         </div>
       </div>
       <hr />
@@ -65,9 +95,10 @@ function Upload(props) {
             PUBLISH
           </button>
         </a>
-        <a href="/">
-          <button className="upload__cancel">CANCEL</button>
-        </a>
+        <Link to="/">
+        <button className="upload__cancel">CANCEL</button>
+        </Link>
+          
       </div>
     </form>
   );
