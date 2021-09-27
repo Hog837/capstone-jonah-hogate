@@ -1,58 +1,61 @@
 import "./Upload.scss";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { createRef } from "react";
 
 
 function Upload(props) {
-  const onSubmitHandler = (event) => {
+  const fileRef = createRef()
+
+  const handleSubmit = (event) => {
     event.preventDefault();
-    axios({
-    method: "POST",
-      url: "http://localhost:8080/posts",
-      data: {
-        image: event.target.image.value,
-        type: event.target.type.value,
-        weight: event.target.weight.value,
-        bait: event.target.bait.value,
-        location: event.target.location.value
-      },
-      headers: {
-        "Content-Type": "multipart/form-data",
-      }
-    }).then(
-      (response) => {
-        console.log(response);
+
+    const file = fileRef.current.files[0];
+    const fileKey = "uploadingFishImage";
+
+    let fileData = new FormData();
+    console.log(fileData);
+    fileData.append(fileKey, file);
+    fileData.append("type", event.target.type.value);
+    fileData.append("weight", event.target.weight.value);
+    fileData.append("bait", event.target.bait.value);
+    fileData.append("location", event.target.location.value);
+
+    let config = { headers: {
+      "Content-Type": "multipart/form-data"
+    }};
+
+    axios.post(`http://localhost:8080/upload`, fileData, config)
+      .then(response => {
+        console.log(response)
         alert("Post published");
         props.history.push("/posts");
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+      })
+      .catch(err => console.log(err));
+
   };
   return (
     <form
       className="upload"
-      onSubmit={(event) => {
-        onSubmitHandler(event);
-      }}
+      encType="multipart/form-data"
+      onSubmit={handleSubmit}
     >
-      <h1 className="upload__upload">Upload Post</h1>
+      <h1 className="upload__upload">Upload Your Fish</h1>
       <hr />
       <div className="upload__video-all">
         <div className="upload__thumbnail-all">
           <p className="upload__thumbnail">POST PICTURE</p>
           <input
-            id="image"
             type="file"
+            ref={fileRef}
             className="upload__image-upload"
             placeholder="Add an image of your fish"
+            accept="image/png, image/jpeg" 
             required
           ></input>
         </div>
         <div className="upload__title-description">
           <p className="upload__title-video">TYPE OF FISH</p>
-
           <input
             id="type"
             className="upload__title"
@@ -65,7 +68,7 @@ function Upload(props) {
           <input
             id="weight"
             className="upload__title"
-            placeholder="Add the weight of your fish"
+            placeholder="Add the weight of your fish in Lbs"
             required
           ></input>
           <p className="upload__title-video-description">
