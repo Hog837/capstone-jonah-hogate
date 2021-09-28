@@ -42,7 +42,7 @@ function Upload(props) {
     >
       <h1 className="upload__upload">Upload Your Fish</h1>
       <hr />
-        <div className="upload__thumbnail-all">
+        <div className="upload__file-all">
           <p className="upload__title-video">POST PICTURE</p>
           <input
             type="file"

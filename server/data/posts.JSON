@@ -29,7 +29,7 @@
     "type": "Largemout Bass",
     "weight": "1.21Lbs",
     "bait": "Fenness Worm",
-    "location": "-94.79566373194217, 36.64162362211313"
+    "location": "-94.79552723999379, 36.64178876066312"
   },
   {
     "id": "ade0a47b-cee6-4693-b4cd-a7e6cb25f4b7",
@@ -46,5 +46,13 @@
     "weight": "1.84Lbs",
     "bait": "Plastic Shad",
     "location": "-94.79573947240516, 36.6414551931436"
+  },
+  {
+    "id": "bb1491eb-30e6-4728-a5fa-72f89feaf622",
+    "image": "http://localhost:8080/images/8.jpg",
+    "type": "Tarpon",
+    "weight": "34Lbs, 38Lbs",
+    "bait": "Live Shad",
+    "location": "-65.98850411961074, 18.429038994596088"
   }
 ]

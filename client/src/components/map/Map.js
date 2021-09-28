@@ -53,7 +53,7 @@ const geojson = {
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [-94.24694932588447, 36.46117955530073],
+        coordinates: [-94.79554075748129, 36.64168707752944],
       },
       properties: {
         title: "Post #4",
@@ -95,10 +95,24 @@ const geojson = {
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [-94.24536084208067,36.45953945522524],
+        coordinates: [-65.98850411961074, 18.429038994596088],
       },
       properties: {
         title: "Post #7",
+        type: "Tarpon",
+        weight: "34Lbs, 38Lbs",
+        bait: "Live shad",
+        
+      },
+    },
+    {
+      type: "Feature",
+      geometry: {
+        type: "Point",
+        coordinates: [-94.24536084208067,36.45953945522524],
+      },
+      properties: {
+        title: "Post #8",
         type: "Sucker-Fish",
         weight: "1.6Lbs",
         bait: "Pink jig",
@@ -145,7 +159,7 @@ class Map extends React.PureComponent {
       new mapboxgl.Marker(el)
   .setLngLat(geometry.coordinates)
   .setPopup(
-    new mapboxgl.Popup({ offset: 25 }) // add popups
+    new mapboxgl.Popup({ offset: 25 }) // add popups with description
       .setHTML(
       `<h3>${properties.title}</h3>
       <p>${properties.type}</p>

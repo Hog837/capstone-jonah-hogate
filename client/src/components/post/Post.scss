@@ -12,12 +12,14 @@
   &__button{
     background-color: #869D7A;
     border-style: none;
+    width: 8rem;
     padding: .5rem;
     padding-right: 1rem;
     padding-left: 1rem;
     border-radius: .5rem;
     margin-top: 1.5rem;
     margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 }
 .post{
@@ -32,11 +34,16 @@
     width: 20rem;
     border-top-left-radius: .5rem;
     border-top-right-radius: .5rem;
+    @include tablet-view{
+      width: 25rem;
+      height: 25rem;
+    }
   }
   &__description{
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: large;
   }
   &__type{
     background-color: #222222;
@@ -44,6 +51,9 @@
     display: flex;
     width: 20rem;
     justify-content: center;
+    @include tablet-view{
+      width: 25rem;
+    }
   }
   &__weight{
     background-color: #222222;
@@ -51,6 +61,9 @@
     display: flex;
     width: 20rem;
     justify-content: center;
+    @include tablet-view{
+      width: 25rem;
+    }
   }
   &__bait{
     background-color: #222222;
@@ -58,6 +71,9 @@
     display: flex;
     width: 20rem;
     justify-content: center;
+    @include tablet-view{
+      width: 25rem;
+    }
   }
   &__location{
     background-color: #222222;
@@ -65,5 +81,8 @@
     display: flex;
     width: 20rem;
     justify-content: center;
+    @include tablet-view{
+      width: 25rem;
+    }
   }
 }
