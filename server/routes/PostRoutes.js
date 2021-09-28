@@ -21,15 +21,6 @@ router.get("/posts", (_req, res) => {
   };
 });
 
-router.get("/posts/:id", (req, res) => {
-  const viewContent = viewPosts();
-  const selectedPost = viewContent.find((post) => {
-    return post.id === req.params.id;
-  });
-  console.log(viewContent);
-  res.status(200).json(selectedPost);
-});
-
 router.post("/upload", (req, res) => {
   console.log(req.files);
   req.files.uploadingFishImage.mv("./public/images/" + req.files.uploadingFishImage.name)

@@ -12,22 +12,97 @@ const geojson = {
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [-77.032, 38.913],
+        coordinates: [-94.24877325780768, 36.461850569595036],
       },
       properties: {
-        title: "Mapbox",
-        description: "Post #1.",
+        title: "Post #1",
+        type: "Smallmouth Bass",
+        weight: "1.68Lbs",
+        bait: "Pink Jig",
       },
     },
     {
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [-122.414, 37.776],
+        coordinates: [-94.248723, 36.462695],
       },
       properties: {
-        title: "Mapbox",
-        description: "San Francisco, California",
+        title: "Post #2",
+        type: "Long-ear Sunfish",
+        weight: "0.02Lbs",
+        bait: "Blue Jig",
+        
+      },
+    },
+    {
+      type: "Feature",
+      geometry: {
+        type: "Point",
+        coordinates: [-94.24694932588447, 36.46117955530073],
+      },
+      properties: {
+        title: "Post #3",
+        type: "Smallmouth Bass",
+        weight: "1.83Lbs",
+        bait: "Pink Jig",
+        
+      },
+    },
+    {
+      type: "Feature",
+      geometry: {
+        type: "Point",
+        coordinates: [-94.24694932588447, 36.46117955530073],
+      },
+      properties: {
+        title: "Post #4",
+        type: "Largemouth Bass",
+        weight: "1.21Lbs",
+        bait: "Fenness Worm",
+        
+      },
+    },
+    {
+      type: "Feature",
+      geometry: {
+        type: "Point",
+        coordinates: [-94.24755338144303, 36.46391681169143],
+      },
+      properties: {
+        title: "Post #5",
+        type: "Green Sunfish",
+        weight: "0.06Lbs",
+        bait: "Purple Jig",
+        
+      },
+    },
+    {
+      type: "Feature",
+      geometry: {
+        type: "Point",
+        coordinates: [-94.79573947240516, 36.6414551931436],
+      },
+      properties: {
+        title: "Post #6",
+        type: "Grey Drum",
+        weight: "1.84Lbs",
+        bait: "Plastic Shad",
+        
+      },
+    },
+    {
+      type: "Feature",
+      geometry: {
+        type: "Point",
+        coordinates: [-94.24536084208067,36.45953945522524],
+      },
+      properties: {
+        title: "Post #7",
+        type: "Sucker-Fish",
+        weight: "1.6Lbs",
+        bait: "Pink jig",
+        
       },
     },
   ],
@@ -64,18 +139,21 @@ class Map extends React.PureComponent {
     for (const { geometry, properties } of geojson.features) {
       // create a HTML element for each feature
       const el = document.createElement("div");
-      el.className = "map__marker";
+      el.className = "marker";
 
       // make a marker for each feature and add to the map
       new mapboxgl.Marker(el)
-        .setLngLat(geometry.coordinates)
-        .setPopup(
-          new mapboxgl.Popup({ offset: 25 }) // add popups
-            .setHTML(
-              `<h3>${properties.title}</h3><p>${properties.description}</p>`
-            )
-        )
-        .addTo(map);
+  .setLngLat(geometry.coordinates)
+  .setPopup(
+    new mapboxgl.Popup({ offset: 25 }) // add popups
+      .setHTML(
+      `<h3>${properties.title}</h3>
+      <p>${properties.type}</p>
+      <p>${properties.bait}</p>
+      <p>${properties.weight}</p>
+      `)
+  )
+  .addTo(map);
     }
   }
 
