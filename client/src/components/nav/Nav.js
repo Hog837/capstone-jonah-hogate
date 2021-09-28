@@ -9,13 +9,18 @@ function Nav(){
       <div className="header__links">
         
         <div className="header__container"> 
-          <Link to="/posts" className="header__container-link">
-            Posts
+          <Link to="/" className="header__container-link">
+            home
           </Link>
         </div>
         <div className="header__container"> 
-          <Link to="/" className="header__container-link">
-            Home
+          <Link to="/posts" className="header__container-link">
+            posts
+          </Link>
+        </div>
+        <div className="header__container"> 
+          <Link to="/posts/map" className="header__container-link">
+          Map
           </Link>
         </div>
         <div className="header__container"> 

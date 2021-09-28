@@ -42,9 +42,8 @@ function Upload(props) {
     >
       <h1 className="upload__upload">Upload Your Fish</h1>
       <hr />
-      <div className="upload__video-all">
         <div className="upload__thumbnail-all">
-          <p className="upload__thumbnail">POST PICTURE</p>
+          <p className="upload__title-video">POST PICTURE</p>
           <input
             type="file"
             ref={fileRef}
@@ -89,7 +88,6 @@ function Upload(props) {
             placeholder="Add the location where you caught your fish"
             required
           ></input>
-        </div>
       </div>
       <hr />
       <div className="upload__buttons">

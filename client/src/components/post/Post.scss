@@ -25,11 +25,45 @@
   flex-direction: column;
   width: 100%;
   align-items: center;
+  padding-bottom: 3rem;
   &__img{
     object-fit: cover;
-    height: 12rem;
-    width: 12rem;
-    border-radius: .5rem;
+    height: 20rem;
+    width: 20rem;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
   }
-  
+  &__description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__type{
+    background-color: #222222;
+    color: #fff;
+    display: flex;
+    width: 20rem;
+    justify-content: center;
+  }
+  &__weight{
+    background-color: #222222;
+    color: #fff;
+    display: flex;
+    width: 20rem;
+    justify-content: center;
+  }
+  &__bait{
+    background-color: #222222;
+    color: #fff;
+    display: flex;
+    width: 20rem;
+    justify-content: center;
+  }
+  &__location{
+    background-color: #222222;
+    color: #fff;
+    display: flex;
+    width: 20rem;
+    justify-content: center;
+  }
 }

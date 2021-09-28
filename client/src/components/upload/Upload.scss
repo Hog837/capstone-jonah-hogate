@@ -107,15 +107,4 @@
       padding-right: 3rem;
     }
   }
-  &__thumbnail-all {
-    @include desktop-view {
-      display: flex;
-      flex-direction: column;
-    }
-  }
-  &__video-all {
-    @include desktop-view {
-      display: flex;
-    }
-  }
 }
