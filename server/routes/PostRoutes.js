@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const uniqid = require("uniqid");
-const fileUpload = require("express-fileUpload");
-const path = require('path');
+require('dotenv').config();
+
 
 const postsFilePath = "./data/posts.json";
 const viewPosts = () => {
@@ -12,7 +12,7 @@ const viewPosts = () => {
   return parsedPostContent;
 };
 
-router.get("/", (_req, res) => {
+router.get("/posts", (_req, res) => {
   try {
     const posts = viewPosts();
     return res.status(200).json(posts);
@@ -21,7 +21,7 @@ router.get("/", (_req, res) => {
   };
 });
 
-router.get("/:id", (req, res) => {
+router.get("/posts/:id", (req, res) => {
   const viewContent = viewPosts();
   const selectedPost = viewContent.find((post) => {
     return post.id === req.params.id;
@@ -30,43 +30,13 @@ router.get("/:id", (req, res) => {
   res.status(200).json(selectedPost);
 });
 
+router.post("/upload", (req, res) => {
+  console.log(req.files);
+  req.files.uploadingFishImage.mv("./public/images/" + req.files.uploadingFishImage.name)
 
-// file upload code
-
-
-
-const util = require('util');
-const app = express();
-
-app.use(express.json())
-app.use(express.urlencoded({extended: true}));
-app.use(fileUpload());
-
-router.post("/", async (req, res) => {
-  try{
-    const file = req.files.file;
-    const fileName = file.name;
-    const size = file.data.length;
-    const extension = path.extname(fileName);
-    const allowedExtensions = /png|jpeg|jpg/;
-    if (!allowedExtensions.test(extension)) throw "Unsupported Extension!";
-    if (size > 10000000) throw "File must be less than 10MB";
-    const md5 = file.md5;
-    const URL = "/images/" + md5 +extension;
-    await util.promisify(file.mv)("../public" + URL);
-    res.json({
-      message: "File uploaded successfully!",
-      url: URL,
-    });
-  } catch(err){
-    console.log(err);
-    res.status(500).json({
-      message: err,
-    });
-  }
   const uploadPost = {
     id: uniqid(),
-    "image": req.body.image,
+    "image": "http://localhost:8080/images/" + req.files.uploadingFishImage.name,
     "type": req.body.type,
     "weight": req.body.weight,
     "bait": req.body.bait,
