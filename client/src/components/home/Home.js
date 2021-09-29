@@ -6,7 +6,10 @@ function Home() {
     <section className="home">
       <div className="home__welcome">
         <h1>Welcome to I-fish</h1>
-        <h3 className="home__welcome-question">Have you ever tried to go fishing and didn't know where to go or what to use?</h3>
+        <h3 className="home__welcome-question">
+          Have you ever tried to go fishing and didn't know where to go or what
+          to use?
+        </h3>
         <h3 className="home__welcome-answer">Well, i'm here to fix that</h3>
       </div>
       <div className="home__body">

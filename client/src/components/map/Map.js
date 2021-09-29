@@ -32,7 +32,6 @@ const geojson = {
         type: "Long-ear Sunfish",
         weight: "0.02Lbs",
         bait: "Blue Jig",
-        
       },
     },
     {
@@ -46,7 +45,6 @@ const geojson = {
         type: "Smallmouth Bass",
         weight: "1.83Lbs",
         bait: "Pink Jig",
-        
       },
     },
     {
@@ -60,7 +58,6 @@ const geojson = {
         type: "Largemouth Bass",
         weight: "1.21Lbs",
         bait: "Fenness Worm",
-        
       },
     },
     {
@@ -74,7 +71,6 @@ const geojson = {
         type: "Green Sunfish",
         weight: "0.06Lbs",
         bait: "Purple Jig",
-        
       },
     },
     {
@@ -88,7 +84,6 @@ const geojson = {
         type: "Grey Drum",
         weight: "1.84Lbs",
         bait: "Plastic Shad",
-        
       },
     },
     {
@@ -102,21 +97,19 @@ const geojson = {
         type: "Tarpon",
         weight: "34Lbs, 38Lbs",
         bait: "Live shad",
-        
       },
     },
     {
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [-94.24536084208067,36.45953945522524],
+        coordinates: [-94.24536084208067, 36.45953945522524],
       },
       properties: {
         title: "Post #8",
         type: "Sucker-Fish",
         weight: "1.6Lbs",
         bait: "Pink jig",
-        
       },
     },
   ],
@@ -149,25 +142,22 @@ class Map extends React.PureComponent {
       });
     });
 
-    // add markers to map
     for (const { geometry, properties } of geojson.features) {
-      // create a HTML element for each feature
       const el = document.createElement("div");
       el.className = "marker";
 
-      // make a marker for each feature and add to the map
       new mapboxgl.Marker(el)
-  .setLngLat(geometry.coordinates)
-  .setPopup(
-    new mapboxgl.Popup({ offset: 25 }) // add popups with description
-      .setHTML(
-      `<h3>${properties.title}</h3>
+        .setLngLat(geometry.coordinates)
+        .setPopup(
+          new mapboxgl.Popup({ offset: 25 })
+            .setHTML(
+              `<h3>${properties.title}</h3>
       <p>${properties.type}</p>
       <p>${properties.bait}</p>
-      <p>${properties.weight}</p>
-      `)
-  )
-  .addTo(map);
+      <p>${properties.weight}</p>`
+            )
+        )
+        .addTo(map);
     }
   }
 

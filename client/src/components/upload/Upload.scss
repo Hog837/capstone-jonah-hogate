@@ -1,5 +1,5 @@
-@use '../../partials/variables' as *;
-@use '../../partials/mixins' as *;
+@use "../../partials/variables" as *;
+@use "../../partials/mixins" as *;
 
 .upload {
   width: 100%;
@@ -7,8 +7,8 @@
   flex-direction: column;
   padding-right: 1rem;
   padding-left: 1rem;
-  &__image-upload{
-    color: #869D7A;
+  &__image-upload {
+    color: #869d7a;
   }
   &__upload {
     color: #222222;
@@ -87,7 +87,7 @@
     height: 3rem;
     margin-bottom: 1.5rem;
     color: #fff;
-    background-color: #869D7A;
+    background-color: #869d7a;
     border-style: none;
     border-radius: 4px;
     font-size: 1rem;
@@ -98,13 +98,13 @@
     }
   }
   &__cancel {
-    color: #869D7A;
+    color: #869d7a;
     background-color: #fff;
     border-style: none;
     font-size: 1rem;
     font-weight: bold;
     @include tablet-view {
       padding-right: 3rem;
-    }
-  }
-}
+    };
+  };
+};

@@ -6,7 +6,7 @@
   height: 95vh;
   &__container {
     height: 100%;
-  };
+  }
   &__sidebar {
     background-color: rgba(35, 55, 75, 0.9);
     color: #fff;
@@ -19,25 +19,25 @@
     margin-top: 10rem;
     margin-left: 1rem;
     border-radius: 4px;
-    @include desktop-view{
+    @include desktop-view {
       margin-top: 4.275rem;
     }
-    @include tablet-view{
+    @include tablet-view {
       margin-top: 4.275rem;
     }
-  };
-};
-.marker{
-  background-image: url('../../assets/Images/map-icon.png');
+  }
+}
+.marker {
+  background-image: url("../../assets/Images/map-icon.png");
   background-size: cover;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   cursor: pointer;
-};
+}
 .mapboxgl-popup {
   max-width: 200px;
-};
+}
 .mapboxgl-popup-content {
   text-align: center;
-};
+}

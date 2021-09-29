@@ -2,8 +2,7 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const uniqid = require("uniqid");
-require('dotenv').config();
-
+require("dotenv").config();
 
 const postsFilePath = "./data/posts.json";
 const viewPosts = () => {
@@ -18,20 +17,22 @@ router.get("/posts", (_req, res) => {
     return res.status(200).json(posts);
   } catch (err) {
     return res.status(500).json({ error: "File cannot be read." });
-  };
+  }
 });
 
 router.post("/upload", (req, res) => {
   console.log(req.files);
-  req.files.uploadingFishImage.mv("./public/images/" + req.files.uploadingFishImage.name)
+  req.files.uploadingFishImage.mv(
+    "./public/images/" + req.files.uploadingFishImage.name
+  );
 
   const uploadPost = {
     id: uniqid(),
-    "image": "http://localhost:8080/images/" + req.files.uploadingFishImage.name,
-    "type": req.body.type,
-    "weight": req.body.weight,
-    "bait": req.body.bait,
-    "location": req.body.location,
+    image: "http://localhost:8080/images/" + req.files.uploadingFishImage.name,
+    type: req.body.type,
+    weight: req.body.weight,
+    bait: req.body.bait,
+    location: req.body.location,
   };
   const post = viewPosts();
   post.push(uploadPost);
