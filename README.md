@@ -1,17 +1,15 @@
-# capstone-jonah-hogate
-
-Overview
+# Overview
 This is a react app used for showing new fishers where and what bait to use to catch fish. Anyone on the app can upload a picture of a fish, type of fish, bait used, and the location in longitude and latittude.
 
-Tech used
-- mapbox api
-- mapbox-gl
+# Tech used
+- Mapbox api
+- Mapbox-gl
 - express-fileupload
 - React
 - Sass (Scss)
 
 
-How to Run
+# How to Run
 
 Clone Repo
 First, you must clone the repo into your preferred editor.
