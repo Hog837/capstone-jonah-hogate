@@ -10,12 +10,12 @@ function Nav(){
         
         <div className="header__container"> 
           <Link to="/" className="header__container-link">
-            home
+            Home
           </Link>
         </div>
         <div className="header__container"> 
           <Link to="/posts" className="header__container-link">
-            posts
+            Posts
           </Link>
         </div>
         <div className="header__container"> 
