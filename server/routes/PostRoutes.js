@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const fs = require("fs");
+const path = require("path");
 const uniqid = require("uniqid");
 require("dotenv").config();
 
-const postsFilePath = "./data/posts.json";
+const postsFilePath = path.join(__dirname, "../data/posts.json");
 const viewPosts = () => {
   const postContent = fs.readFileSync(postsFilePath);
   const parsedPostContent = JSON.parse(postContent);
@@ -23,7 +24,7 @@ router.get("/posts", (_req, res) => {
 router.post("/upload", (req, res) => {
   console.log(req.files);
   req.files.uploadingFishImage.mv(
-    "./public/images/" + req.files.uploadingFishImage.name
+    path.join(__dirname, "../public/images/" + req.files.uploadingFishImage.name)
   );
 
   const uploadPost = {
