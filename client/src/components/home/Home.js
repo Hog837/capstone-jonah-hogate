@@ -10,7 +10,7 @@ function Home() {
           Have you ever tried to go fishing and didn't know where to go or what
           to use?
         </h3>
-        <h3 className="home__welcome-answer">Well, i'm here to fix that</h3>
+        <h3 className="home__welcome-answer">Well, I'm here to fix that</h3>
       </div>
       <div className="home__body">
         <div className="home__cards">
